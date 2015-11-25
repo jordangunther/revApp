@@ -25,6 +25,11 @@ app.config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', functi
 			url: '/recItems',
 			templateUrl: 'templates/recItemsTmpl.html'
 		})
+		.state('orderEntry', {
+			url: '/orderEntry',
+			templateUrl: 'templates/orderEntryTmpl.html',
+			controller: 'orderEntryCtrl'
+		})
 
 
 
