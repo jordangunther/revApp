@@ -7,6 +7,7 @@ Amount: <input placeholder='amount' ng-model='amount'></input>
 <button ng-click='getProducts()'>Shop</button>
 <br>
 <br>
+<!--Select Product-->
 <md-button ng-show='products'class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive" ng-class="{active:myDropdownIsActive}">
    	{{productsPlaceholder}}
     <ul class="dropdown-menu md-whiteframe-z1">
@@ -18,7 +19,9 @@ Amount: <input placeholder='amount' ng-model='amount'></input>
     </ul>
  </md-button>
 
- <div ng-show=false layout="column" ng-cloak="" class="inputdemoIcons">
+
+<!--New Customer Info-->
+ <div ng-show=true layout="column" ng-cloak="" class="inputdemoIcons">
 
   <br>
   <md-content layout-padding="" class="autoScroll">
@@ -32,25 +35,20 @@ Amount: <input placeholder='amount' ng-model='amount'></input>
       <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
       <input ng-model="customer.phone" type="text" placeholder="Contact Number">
     </md-input-container>
-
     <md-input-container class="md-block">
       <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
       <input ng-model="customer.email" type="email" placeholder="Contact Email (required)" ng-required="true">
     </md-input-container>
-
     <md-input-container md-no-float="" class="md-block">
       <md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon>
       <input ng-model="customer.billAddress" type="text" placeholder="Billing Address">
     </md-input-container>
-
     <md-input-container class="md-icon-float md-block">
       <label>Discount Code</label>
       <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
       <input ng-model="customer.discount" type="number" step="0.01" flex="">
     </md-input-container>
-
   </md-content>
-
 </div>
 
 
