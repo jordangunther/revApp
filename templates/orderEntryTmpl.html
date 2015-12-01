@@ -1,5 +1,23 @@
+<<<<<<< HEAD
+Part: <input placeholder='product name' ng-model='product'></input>
+<input placeholder='amount' ng-model='amount'></input>
+<button ng-click='addPart()'>submit</button>
+<br>
+<button ng-click='getPart()'>Shop</button>
+<br>
+<br>
+<md-button ng-show='parts'class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive" ng-class="{active:myDropdownIsActive}">
+    Products
+    <ul class="dropdown-menu md-whiteframe-z1">
+      <li ng-repeat = 'part in parts'><md-button ng-model='selectedProduct' ng-click='buyProduct()'>{{part.name}}</md-button></li>
+    </ul>
+  </md-button>
+
+ <div ng-show='buyProduct'>{{buyProduct}}</div>
+=======
 Part: <input ng-model='part'></input>
 Amount: <input ng-model='amount'></input>
 <button ng-click='createPart()'>submit</button>
 <br>
 <p ng-repeat='part in parts'>{{part.name}}</p>
+>>>>>>> 42a24ea72782f041eda8bf5fcb6c9340386dcf03
