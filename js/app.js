@@ -25,10 +25,20 @@ app.config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', functi
 			url: '/recItems',
 			templateUrl: 'templates/recItemsTmpl.html'
 		})
+		.state('createProduct', {
+			url: '/createProduct',
+			templateUrl: 'templates/createProductTmpl.html',
+			controller: 'createProductCtrl'
+		})
 		.state('orderEntry', {
 			url: '/orderEntry',
 			templateUrl: 'templates/orderEntryTmpl.html',
 			controller: 'orderEntryCtrl'
+		})
+		.state('shop', {
+			url: '/shop',
+			templateUrl: 'templates/shopTmpl.html',
+			controller: 'shopCtrl'
 		})
 
 

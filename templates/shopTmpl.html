@@ -1,0 +1,27 @@
+<button ng-click='getProducts()'>
+  Shop
+</button>
+<br>
+<br>
+<!--select product-->
+<md-button ng-show='products'class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive" ng-class="{active:myDropdownIsActive}">
+  {{productObj.name}}
+  <ul class="dropdown-menu md-whiteframe-z1">
+    <li ng-repeat = 'product in products'>
+      <md-button ng-model='selectedProduct' ng-click='viewPrice($index); total()'>
+      	{{product.name}}
+      </md-button>
+    </li>
+  </ul>
+</md-button>
+
+<div ng-show='priceShow'>
+  <div ng-repeat='item in cartItems'>
+    {{item.name}} - {{item.amount | currency : symbol : fractionSize}}
+  </div>
+  Total: 
+  <br>
+  <button>
+    Purchase
+  </button>
+</div>
