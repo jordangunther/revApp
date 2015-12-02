@@ -1,6 +1,7 @@
 app.controller('orderEntryCtrl', function($scope, orderEntryService){
 	
 	$scope.productObj = {name: 'Products'};
+	$scope.productArr = [];
 	$scope.priceShow = false;
 	$scope.customerOptionShow = false;
 	$scope.newCustomerShow = false;
@@ -8,6 +9,8 @@ app.controller('orderEntryCtrl', function($scope, orderEntryService){
 
 	$scope.viewPrice = function(index){
 		$scope.productObj = $scope.products[index];
+		$scope.productArr.push($scope.products[index]);
+		console.log($scope.productArr);
 		$scope.customer.partID = $scope.products[index].name;
 		$scope.customer.amount = $scope.products[index].amount;
 		$scope.priceShow = true;
@@ -35,6 +38,7 @@ app.controller('orderEntryCtrl', function($scope, orderEntryService){
 	$scope.createOrder = function(){
 		orderEntryService.createOrder($scope.customer).then(function(res){
 			$scope.confirmation = res;
+			console.log(res);
 		})
 	}
 });

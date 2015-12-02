@@ -20,9 +20,16 @@ Amount: <input placeholder='amount' ng-model='amount'></input>
  </md-button>
 <!--purchase product-->
 <div ng-show='priceShow'>
-  {{productObj.name}} - {{productObj.amount | currency : symbol : fractionSize}}
-  <button ng-click="customerOption()">Purchase</button>
+  <div ng-repeat='p in productArr'>
+    {{p.name}} - {{p.amount | currency : symbol : fractionSize}}
+  </div>
+  Total: 
+  <br>
+  <button ng-click="customerOption()">
+  Purchase
+  </button>
 </div>
+
 <!--customer options-->
 <div ng-show='customerOptionShow'>
   <button ng-click='newCustomer()'>New Customer?</button>
@@ -89,8 +96,16 @@ Amount: <input placeholder='amount' ng-model='amount'></input>
       <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
       <input ng-model="customer.amount" type="text" step="0.01" flex="">
     </md-input-container>
+    <md-input-container md-no-float="" class="md-block">
+      <md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon>
+      <input ng-model="customer.date" type="text" placeholder="Today's Date">
+    </md-input-container>
+    <md-input-container md-no-float="" class="md-block">
+      <md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon>
+      <input ng-model="customer.date" type="text" placeholder="invoiced">
+    </md-input-container>
   </md-content>
   <button ng-click='createOrder()'>complete purchase</button>
 </div>
-<div ng-show='confirmation'>{{confirmation}}</div>
+<div ng-show='confirmation'>Order Confirmation: name: {{confirmation.name}}</div>
 
