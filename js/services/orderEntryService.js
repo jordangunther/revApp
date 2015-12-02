@@ -1,5 +1,7 @@
 app.service('orderEntryService', function($q){
 	var ref = new Firebase('https://myallapp.firebaseio.com/revApp/parts');
+	var refOrders = new Firebase('https://myallapp.firebaseio.com/revApp/orders');
+	
 	var defer = $q.defer();
 	this.getProducts = function(){
 		ref.on('value', function(res){
@@ -27,4 +29,18 @@ app.service('orderEntryService', function($q){
 		});
 		return defer.promise;
 	};
+
+	this.createOrder = function(orderInfo){
+		refOrders.push(orderInfo)
+		refOrders.on('value', function(res){
+			console.log(res);
+			var orderObjs = res.val();
+			var orders = [];
+			for(key in orderObjs){
+				orders.push(orderObjs[key]);
+			}
+			defer.resolve(orders);
+		});
+		return defer.promise
+	}
 });

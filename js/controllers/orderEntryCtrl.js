@@ -1,11 +1,25 @@
 app.controller('orderEntryCtrl', function($scope, orderEntryService){
-	$scope.productsPlaceholder = 'Products';
-	$scope.newCustomer = true;
+	
+	$scope.productObj = {name: 'Products'};
+	$scope.priceShow = false;
+	$scope.customerOptionShow = false;
+	$scope.newCustomerShow = false;
 	$scope.customer = {};
-	$scope.buyProduct = function(index){
-		$scope.productsPlaceholder = $scope.products[index].name;
+
+	$scope.viewPrice = function(index){
+		$scope.productObj = $scope.products[index];
+		$scope.customer.partID = $scope.products[index].name;
+		$scope.customer.amount = $scope.products[index].amount;
+		$scope.priceShow = true;
 	}
 
+	$scope.customerOption = function(){
+		$scope.customerOptionShow = true;
+	}
+
+	$scope.newCustomer = function(){
+		$scope.newCustomerShow = true;
+	}
 	$scope.getProducts = function() {
 		orderEntryService.getProducts().then(function(res){
 			$scope.products = res;
@@ -15,8 +29,12 @@ app.controller('orderEntryCtrl', function($scope, orderEntryService){
 	$scope.addProduct = function(){
 		orderEntryService.addProduct($scope.product, $scope.amount).then(function(res){
 			$scope.products = res;
-			console.log($scope.products);
 		});
 	}
 
+	$scope.createOrder = function(){
+		orderEntryService.createOrder($scope.customer).then(function(res){
+			$scope.confirmation = res;
+		})
+	}
 });
