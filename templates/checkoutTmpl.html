@@ -1,0 +1,5 @@
+checkout!
+<div ng-repeat='item in cartItems'>
+	{{item.name}} - {{item.amount | currency : symbol : fractionSize}}
+</div>
+{{cartTotal | currency : symbol : fractionSize}}

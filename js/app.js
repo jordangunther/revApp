@@ -5,11 +5,12 @@ app.config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', functi
 		.state('home', {
 			url: '/home',
 			templateUrl: 'templates/homeTmpl.html',
+			controller: 'homeCtrl'
 		})
 		.state('summary', {
 			url: '/summary/:userId',
 			templateUrl: 'templates/summaryTmpl.html',
-			controller: 'summaryCtrl',
+			controller: 'summaryCtrl'
 		})
 		.state('login', {
 			url: '/login',
@@ -23,7 +24,8 @@ app.config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', functi
 		})
 		.state('recItems', {
 			url: '/recItems',
-			templateUrl: 'templates/recItemsTmpl.html'
+			templateUrl: 'templates/recItemsTmpl.html',
+			controller: 'recItemsCtrl'
 		})
 		.state('createProduct', {
 			url: '/createProduct',
@@ -40,6 +42,21 @@ app.config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', functi
 			templateUrl: 'templates/shopTmpl.html',
 			controller: 'shopCtrl'
 		})
+		.state('customer', {
+			url: '/customer',
+			templateUrl: 'templates/customerTmpl.html',
+			controller: 'customerCtrl'
+		})
+		.state('newCustomer', {
+			url: '/newCustomer',
+			templateUrl: 'templates/newCustomerTmpl.html',
+			controller: 'newCustomerCtrl'
+		})
+		.state('checkout', {
+			url: '/checkout',
+			templateUrl: 'templates/checkoutTmpl.html',
+			controller: 'checkoutCtrl'
+		});
 
 
 
@@ -49,5 +66,5 @@ app.config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', functi
 	// .dark()
 	.accentPalette('green', {
 		'default': '500'
-	})
-}])
+	});
+}]);

@@ -1,1 +1,48 @@
-C:\Users\jogunthe\Desktop\project\revApp\templates
+<div layout="column" ng-cloak="" class="inputdemoIcons">
+<br>
+  <md-content layout-padding="" class="autoScroll">
+    <md-input-container class="md-icon-float md-block">
+      <label>
+        Customer Name
+      </label>
+      <input ng-model="customer.name" type="text">
+    </md-input-container>
+    
+    <md-input-container class="md-block">
+      <input ng-model="customer.email" type="email" placeholder="Contact Email (required)" ng-required="true">
+    </md-input-container>
+
+    <md-input-container md-no-float="" class="md-block">
+      <input ng-model="customer.billAddress" type="text" placeholder="Billing Address">
+    </md-input-container>
+
+    <md-input-container md-no-float="" class="md-block">
+      <input ng-model="customer.billAddressZip" type="text" placeholder="Billing Address Zip Code">
+    </md-input-container>
+
+    <md-input-container md-no-float="" class="md-block">
+      <input ng-model="customer.billAddressCity" type="text" placeholder="Billing Address City">
+    </md-input-container>
+
+    <md-input-container md-no-float="" class="md-block">
+      <input ng-model="customer.billAddressState" type="text" placeholder="Billing Address State">
+    </md-input-container>
+    <md-input-container md-no-float="" class="md-block">
+      <input ng-model="customer.shipAddress" type="text" placeholder="Shipping Address">
+    </md-input-container>
+
+    <md-input-container md-no-float="" class="md-block">
+      <input ng-model="customer.shipAddressZip" type="text" placeholder="Shipping Address Zip Code">
+    </md-input-container>
+    <md-input-container md-no-float="" class="md-block">
+      <input ng-model="customer.shipAddressCity" type="text" placeholder="Shipping Address City">
+    </md-input-container>
+
+     <md-input-container md-no-float="" class="md-block">
+      <input ng-model="customer.shipAddressState" type="text" placeholder="Shipping Address State">
+    </md-input-container>
+  </md-content>
+  <button ng-click='newCustomer()'>complete purchase</button>
+</div>
+<a ui-sref='checkout' ng-click='mySelection(checkout)'><md-button class='md-raised md-primary'>
+Proceed to Checkout</md-button></a>
