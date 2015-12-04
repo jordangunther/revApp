@@ -1,5 +1,14 @@
-checkout!
+Cart:
+<hr>
 <div ng-repeat='item in cartItems'>
-	{{item.name}} - {{item.amount | currency : symbol : fractionSize}}
+	{{item.name}} - {{item.amount | currency : symbol : fractionSize}} - Qty: {{item.qty}} - Extended Amount: {{item.extendedAmount | currency : symbol : fractionSize}}
 </div>
-{{cartTotal | currency : symbol : fractionSize}}
+<hr>
+<hr>
+Order Total: {{cartTotal | currency : symbol : fractionSize}}
+
+<a ui-sref='orderConfirmation' ng-click='mySelection(orderConfirmation)'>
+  <md-button class='md-raised md-primary' ng-click='addLineItems()'>
+    Place Order
+  </md-button>
+</a>

@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html ng-app='recApp'>
-<head>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="js/bower_components/angular-material/angular-material.css">
-	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-	<title></title>
-</head>
-<body ng-controller='myCtrl'>
-	<md-toolbar>
-      <div class="md-toolbar-tools">
-        <md-button aria-label="home" ui-sref='home'>
-          home
-        </md-button>
-        <md-button aria-label="login" ui-sref='login'>
-          login
-        </md-button>
-        <md-button aria-label="createProduct" ui-sref='createProduct'>
-          create product
-        </md-button>
-        <md-button aria-label="shop" ui-sref='shop'>
-          shop
-        </md-button>
-        <span flex=""></span>
-        <md-button class="md-raised" aria-label="Learn More">
-          Learn More
-        </md-button>
-        <md-button class="md-fab md-mini" aria-label="Favorite">
-        </md-button>
-      </div>  
-    </md-toolbar>
+  <head>
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+  	<link rel="stylesheet" type="text/css" href="js/bower_components/angular-material/angular-material.css">
+  	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  	<title>RevApp</title>
+  </head>
+  <body ng-controller='myCtrl'>
+  	<md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button aria-label="home" ui-sref='home'>
+            home
+          </md-button>
+          <md-button aria-label="login" ui-sref='login'>
+            login
+          </md-button>
+          <md-button aria-label="createProduct" ui-sref='createProduct'>
+            create product
+          </md-button>
+          <md-button aria-label="shop" ui-sref='shop'>
+            shop
+          </md-button>
+          <span flex=""></span>
+          <md-button class="md-raised" aria-label="Learn More">
+            Learn More
+          </md-button>
+          <md-button class="md-fab md-mini" aria-label="Favorite">
+          </md-button>
+        </div>  
+      </md-toolbar>
 
-	<div ui-view></div>
-  <!-- Angular -->
-	<script src="js/bower_components/angular/angular.js"></script>
-	<script src="js/bower_components/angular-animate/angular-animate.js"></script>
-	<script src="js/bower_components/angular-aria/angular-aria.js"></script>
-	<script src="js/bower_components/angular-material/angular-material.js"></script>
-	<script src='js/bower_components/angular-ui-router/release/angular-ui-router.js'></script>
-  <!-- Firebase -->
-  <script src="js/bower_components/firebase/firebase.js"></script>
-  <script src="js/bower_components/angularfire/dist/angularfire.js"></script>
-  <!-- JSON -->
-  <script src="js/bower_components/json/json2.js"></script>
-  <!-- App Init -->
-	<script src="js/app.js"></script>
-  <!-- Controllers -->
-  <script src="js/controllers/homeCtrl.js"></script>
-  <script src="js/controllers/loginCtrl.js"></script>
-  <script src="js/controllers/myCtrl.js"></script>
-  <script src="js/controllers/recItemsCtrl.js"></script>
-  <script src="js/controllers/regiCtrl.js"></script>
-  <script src="js/controllers/summaryCtrl.js"></script>
-  <script src="js/controllers/orderEntryCtrl.js"></script>
-  <script src="js/controllers/createProductCtrl.js"></script>
-  <script src="js/controllers/customerCtrl.js"></script>
-  <script src="js/controllers/newCustomerCtrl.js"></script>
-  <script src="js/controllers/shopCtrl.js"></script>
-  <script src="js/controllers/checkoutCtrl.js"></script>
-  <!-- Services -->
-  <script src="js/services/homeService.js"></script>
-  <script src="js/services/loginService.js"></script>
-  <script src="js/services/myService.js"></script>
-  <script src="js/services/recItemsService.js"></script>
-  <script src="js/services/regiService.js"></script>
-  <script src="js/services/firebaseService.js"></script>
-  <script src="js/services/orderEntryService.js"></script>
-  <script src="js/services/createProductService.js"></script>
-  <script src="js/services/customerService.js"></script>
-  <script src="js/services/newCustomerService.js"></script>
-  <script src="js/services/shopService.js"></script>
-  <script src="js/services/checkoutService.js"></script>
-  <!-- Directives -->  
-  <script src="js/directives/buttonDir.js"></script>
-</body>
+  	<div ui-view></div>
+    <!-- Angular -->
+  	<script src="js/bower_components/angular/angular.js"></script>
+  	<script src="js/bower_components/angular-animate/angular-animate.js"></script>
+  	<script src="js/bower_components/angular-aria/angular-aria.js"></script>
+  	<script src="js/bower_components/angular-material/angular-material.js"></script>
+  	<script src='js/bower_components/angular-ui-router/release/angular-ui-router.js'></script>
+    <!-- Firebase -->
+    <script src="js/bower_components/firebase/firebase.js"></script>
+    <script src="js/bower_components/angularfire/dist/angularfire.js"></script>
+    <!-- JSON -->
+    <script src="js/bower_components/json/json2.js"></script>
+    <!-- App Init -->
+  	<script src="js/app.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/homeCtrl.js"></script>
+    <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/controllers/myCtrl.js"></script>
+    <script src="js/controllers/recItemsCtrl.js"></script>
+    <script src="js/controllers/regiCtrl.js"></script>
+    <script src="js/controllers/summaryCtrl.js"></script>
+    <script src="js/controllers/orderEntryCtrl.js"></script>
+    <script src="js/controllers/createProductCtrl.js"></script>
+    <script src="js/controllers/customerCtrl.js"></script>
+    <script src="js/controllers/newCustomerCtrl.js"></script>
+    <script src="js/controllers/shopCtrl.js"></script>
+    <script src="js/controllers/checkoutCtrl.js"></script>
+    <!-- Services -->
+    <script src="js/services/homeService.js"></script>
+    <script src="js/services/loginService.js"></script>
+    <script src="js/services/myService.js"></script>
+    <script src="js/services/recItemsService.js"></script>
+    <script src="js/services/regiService.js"></script>
+    <script src="js/services/firebaseService.js"></script>
+    <script src="js/services/orderEntryService.js"></script>
+    <script src="js/services/createProductService.js"></script>
+    <script src="js/services/customerService.js"></script>
+    <script src="js/services/newCustomerService.js"></script>
+    <script src="js/services/shopService.js"></script>
+    <script src="js/services/checkoutService.js"></script>
+    <!-- Directives -->  
+    <script src="js/directives/buttonDir.js"></script>
+  </body>
 </html>

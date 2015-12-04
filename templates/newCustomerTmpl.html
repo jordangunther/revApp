@@ -1,5 +1,4 @@
 <div layout="column" ng-cloak="" class="inputdemoIcons">
-<br>
   <md-content layout-padding="" class="autoScroll">
     <md-input-container class="md-icon-float md-block">
       <label>
@@ -27,22 +26,33 @@
     <md-input-container md-no-float="" class="md-block">
       <input ng-model="customer.billAddressState" type="text" placeholder="Billing Address State">
     </md-input-container>
-    <md-input-container md-no-float="" class="md-block">
-      <input ng-model="customer.shipAddress" type="text" placeholder="Shipping Address">
-    </md-input-container>
 
-    <md-input-container md-no-float="" class="md-block">
-      <input ng-model="customer.shipAddressZip" type="text" placeholder="Shipping Address Zip Code">
-    </md-input-container>
-    <md-input-container md-no-float="" class="md-block">
-      <input ng-model="customer.shipAddressCity" type="text" placeholder="Shipping Address City">
-    </md-input-container>
+    if your shipping address isn't the same as your billing address please click 
+    <md-button class='md-raised md-primary' ng-click='shippingAddress()'>
+      here
+    </md-button>
+    
+    <div ng-show='shippingShow'>
+      <md-input-container md-no-float="" class="md-block">
+        <input ng-model="customer.shipAddress" type="text" placeholder="Shipping Address">
+      </md-input-container>
 
-     <md-input-container md-no-float="" class="md-block">
-      <input ng-model="customer.shipAddressState" type="text" placeholder="Shipping Address State">
-    </md-input-container>
+      <md-input-container md-no-float="" class="md-block">
+        <input ng-model="customer.shipAddressZip" type="text" placeholder="Shipping Address Zip Code">
+      </md-input-container>
+      <md-input-container md-no-float="" class="md-block">
+        <input ng-model="customer.shipAddressCity" type="text" placeholder="Shipping Address City">
+      </md-input-container>
+
+       <md-input-container md-no-float="" class="md-block">
+        <input ng-model="customer.shipAddressState" type="text" placeholder="Shipping Address State">
+      </md-input-container>
+    </div>
   </md-content>
-  <button ng-click='newCustomer()'>complete purchase</button>
 </div>
-<a ui-sref='checkout' ng-click='mySelection(checkout)'><md-button class='md-raised md-primary'>
-Proceed to Checkout</md-button></a>
+
+<a ui-sref='checkout' ng-click='mySelection(checkout)'>
+  <md-button class='md-raised md-primary' ng-click='newCustomer()'>
+    Proceed to Checkout
+  </md-button>
+</a>

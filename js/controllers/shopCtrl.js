@@ -1,9 +1,9 @@
 app.controller('shopCtrl', function($scope, shopService){
 	
+	$scope.item = {};
 	$scope.productObj = {name: 'Products'};
 	$scope.cartItems = [];
 	$scope.priceShow = false;
-	$scope.test = 'heck ya';
 
 	$scope.getProducts = function() {
 		shopService.getProducts().then(function(res){
@@ -21,14 +21,21 @@ app.controller('shopCtrl', function($scope, shopService){
 	$scope.total = function(numberArr){
 		$scope.cartTotal = 0; 
 		for (var i = 0; i < numberArr.length; i++){		
-			var num = parseInt(numberArr[i].amount)
-			$scope.cartTotal = $scope.cartTotal + num;	
+			var amount = parseInt(numberArr[i].amount);
+			if (numberArr[i].qty) {
+				var qty = numberArr[i].qty;
+			} else {
+				numberArr[i].qty = 1;
+				var qty = numberArr[i].qty;
+			}
+			numberArr[i].extendedAmount = amount * qty;
+			$scope.cartTotal = $scope.cartTotal + (numberArr[i].extendedAmount);	
 		}
+		return $scope.cartTotal;
 	}
 
 	$scope.storeCart = function(){
 		shopService.cartItems = $scope.cartItems;
 		shopService.cartTotal = $scope.cartTotal;
-	}
-	
+	}	
 });

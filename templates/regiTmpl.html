@@ -3,25 +3,34 @@
 <md-content layout-padding="">
     <form name="projectForm">
       <md-input-container class="md-block">
-        <label>Full Name</label>
+        <label>
+          Full Name
+        </label>
         <input maxlength="30" required="" name="fullName" ng-model="user.name">
         <div ng-messages="projectForm.description.$error">
-          <div ng-message="required">This is required.</div>
+          <div ng-message="required">
+            This is required.
+          </div>
         </div>
       </md-input-container>
 
       <md-input-container class="md-block">
-        <label>Email</label>
+        <label>
+          Email
+        </label>
         <input required="" type='email' name="clientName" ng-model="user.email" ng-pattern="/^.+@.+\..+$/">
         <div ng-messages="projectForm.clientName.$error">
-          <div ng-message="required">This is required.</div>
+          <div ng-message="required">
+            This is required.
+          </div>
         </div>
       </md-input-container>
 
       <md-input-container class="md-block">
-        <label>Password</label>
+        <label>
+          Password
+        </label>
         <input required="" type="password" name="clientEmail" ng-model="user.password" minlength="8" maxlength="100">
-
         <div ng-messages="projectForm.clientEmail.$error" role="alert">
           <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
             This is required
@@ -31,4 +40,8 @@
     </form>
   </md-content>
 
-<md-button class='md-raised md-accent' ng-click='register()'>register</md-button>
+<md-button class='md-raised md-accent' ng-click='register()'>
+  register
+</md-button>
+
+
