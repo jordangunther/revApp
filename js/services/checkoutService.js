@@ -41,5 +41,6 @@ app.service('checkoutService', function($q){
 				refLineItems.push(lineItem);
 			}
 		})
+		alert('order confirmed');
 	}
 });
