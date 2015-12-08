@@ -12,10 +12,18 @@ app.controller('shopCtrl', function($scope, shopService){
 	}
 
 	$scope.viewPrice = function(index){
-		$scope.productObj = $scope.products[index];
-		$scope.cartItems.push($scope.products[index]);
-		$scope.priceShow = true;
-		$scope.total($scope.cartItems);
+		var dup = false;
+		for (var i = 0; i < $scope.cartItems.length; i++){
+			if ($scope.products[index] === $scope.cartItems[i]) {
+				dup = true;
+			}
+		}
+		if (dup === false) {
+			$scope.productObj = $scope.products[index];
+			$scope.cartItems.push($scope.products[index]);
+			$scope.priceShow = true;
+			$scope.total($scope.cartItems);
+		}	
 	}
 
 	$scope.total = function(numberArr){
