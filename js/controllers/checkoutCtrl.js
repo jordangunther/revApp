@@ -5,11 +5,13 @@ app.controller('checkoutCtrl', function($scope, checkoutService, shopService, ne
 	$scope.customer = customerService.savedCustomer;
 
 	$scope.addLineItems = function() {
+		
 		if($scope.newCustomer) {
+			$scope.newCustomer.orderEntryDate = $scope.orderEntryDate.toString();
 			checkoutService.addLineItems($scope.cartItems, $scope.newCustomer);
 		} else {
+			$scope.customer.orderEntryDate = $scope.orderEntryDate.toString();
 			checkoutService.addLineItems($scope.cartItems, $scope.customer);
-			console.log()
 		}
 	}
 });

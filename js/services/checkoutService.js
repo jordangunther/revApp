@@ -22,21 +22,12 @@ app.service('checkoutService', function($q){
 		this.getSalesOrder().then(function(ref){
 			var salesOrder = ref + 1;	
 			refSalesOrders.push(salesOrder);
-			if (orderItems.length) {
-				for (var i = 0; i < orderItems.length; i++) {
-					lineItem.product = orderItems[i].name;
-					lineItem.unitAmount = orderItems[i].amount;
-					lineItem.qty = orderItems[i].qty;
-					lineItem.extendedAmount = (orderItems[i].amount * orderItems[i].qty);
-					console.log('scope', salesOrder);
-					lineItem.salesOrder = salesOrder;
-					refLineItems.push(lineItem);
-				}
-			} else {
-				lineItem.product = orderItems.name;
-				lineItem.unitAmount = orderItems.amount;
-				lineItem.qty = orderItems.qty;
-				lineItem.extendedAmount = orderItems.extendedAmount;
+	
+			for (var i = 0; i < orderItems.length; i++) {
+				lineItem.product = orderItems[i].name;
+				lineItem.unitAmount = orderItems[i].amount;
+				lineItem.qty = orderItems[i].qty;
+				lineItem.extendedAmount = (orderItems[i].amount * orderItems[i].qty);
 				lineItem.salesOrder = salesOrder;
 				refLineItems.push(lineItem);
 			}
