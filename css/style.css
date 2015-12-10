@@ -42,4 +42,10 @@
   color: red; }
 .float {
   float: left;
+
+/* ui-grid */
+.myGrid {
+  width: 500px;
+  height: 250px;
 }
+

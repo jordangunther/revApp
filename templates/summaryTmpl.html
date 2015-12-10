@@ -1,8 +1,8 @@
-<a ui-sref='recItems' ng-click='mySelection(invoiced)'>
-	<md-button class='md-raised md-accent'>
-		Invoiced
-	</md-button>
-</a>
+
+<md-button ui-sref='recItems' ng-click='mySelection(invoiced)'class='md-raised md-accent'>
+	Invoiced
+</md-button>
+
 
 <a ui-sref='recItems' ng-click='mySelection(shipped)'>
 	<md-button class='md-raised md-primary'>
@@ -21,4 +21,7 @@
 		order entry
 	</md-button>
 </a>
+
+<div ui-grid="{ data: myData }" class="myGrid"></div>
+
 
