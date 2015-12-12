@@ -64,6 +64,10 @@ angular.module('recApp', ["ui.router", "ui.grid", "ngAnimate", "ngAria", "ngMate
 	$mdThemingProvider.theme('default')
 	// .dark()
 	.accentPalette('green', {
-		'default': '500'
+		'default': '500',
+		'hue-1': '300',
+		'hue-1': '200',
+		'hue-1': '50',
+
 	});
 }]);

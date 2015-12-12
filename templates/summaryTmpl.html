@@ -14,15 +14,19 @@
 
 <div ui-grid="{ data: myData }" class="myGrid"></div>
 
+<div>
+	<bar-graph data="myGraphData"></bar-graph>
+</div>
+
 <div class="tabsdemoDynamicHeight">
   <md-content>
-    <md-tabs md-dynamic-height="" md-border-bottom="">
+    <md-tabs class='md-accent' md-dynamic-height="" md-border-bottom="">
       <md-tab label="Revenue">
         <md-content class="md-padding">
           <h1 class="md-display-2">
           	Revenue
           </h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+          <p>{{lineItems}}</p>
         </md-content>
       </md-tab>
       <md-tab label="two">

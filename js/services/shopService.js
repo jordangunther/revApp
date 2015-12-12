@@ -7,7 +7,7 @@ angular.module('recApp')
 		ref.on('value', function(res){
 			var productObjs = res.val();
 			var products = [];
-			for (key in productObjs){
+			for (key in productObjs) {
 				products.push(productObjs[key]);
 			}
 			defer.resolve(products);
