@@ -1,4 +1,5 @@
-app.service('checkoutService', function($q){
+angular.module('recApp')
+.service('checkoutService', function($q){
 	var refSalesOrders = new Firebase('https://myallapp.firebaseio.com/revApp/salesOrders');
 	var refLineItems = new Firebase('https://myallapp.firebaseio.com/revApp/lineItems');
 	this.getSalesOrder = function(){

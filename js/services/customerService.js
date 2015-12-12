@@ -1,4 +1,6 @@
-app.service('customerService', function($q){
+angular.module('recApp')
+.service('customerService', function($q){
+	
 	ref = new Firebase('https://myallapp.firebaseio.com/revApp/customers');
 
 	this.getCustomer = function() {

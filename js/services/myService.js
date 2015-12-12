@@ -1,3 +1,4 @@
-app.service('myService', function($scope){
+angular.module('recApp')
+.service('myService', function($scope){
 
 })

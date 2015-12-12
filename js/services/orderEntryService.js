@@ -1,3 +1,4 @@
-app.service('orderEntryService', function(){
+angular.module('recApp')
+.service('orderEntryService', function(){
 
 });

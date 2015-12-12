@@ -1,5 +1,7 @@
-app.controller('summaryCtrl', function($scope){
-	$scope.myData = [
+angular.module('recApp')
+.controller('summaryCtrl', function($scope){
+	
+    $scope.myData = [
        {
         "firstName": "Cox",
         "lastName": "Carney",

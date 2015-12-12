@@ -1,4 +1,5 @@
-app.controller('shopCtrl', function($scope, shopService){
+angular.module('recApp')
+.controller('shopCtrl', function($scope, shopService){
 	
 	$scope.item = {};
 	$scope.productObj = {name: 'Products'};

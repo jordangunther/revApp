@@ -1,4 +1,5 @@
-app.controller('customerCtrl', function($scope, customerService){
+angular.module('recApp')
+.controller('customerCtrl', function($scope, customerService){
 	$scope.customers;
 	$scope.getCustomers = function() {
 		customerService.getCustomer().then(function(res){

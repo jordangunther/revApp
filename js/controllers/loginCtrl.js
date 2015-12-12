@@ -1,4 +1,5 @@
-app.controller('loginCtrl', function ($scope, $state, loginService){
+angular.module('recApp')
+.controller('loginCtrl', function ($scope, $state, loginService){
 	var loginCallback = function(user) {
     $state.go('summary', {userId: user.uid} );
   };

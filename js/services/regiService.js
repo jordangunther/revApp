@@ -1,5 +1,6 @@
-    app.service('regiService', function($firebaseAuth){
-
+angular.module('recApp')
+.service('regiService', function($firebaseAuth){
+  
 	var ref = new Firebase('https://myallapp.firebaseio.com/recApp');
 	var authObj = $firebaseAuth(ref);
 	console.log("this is authObj:", authObj);

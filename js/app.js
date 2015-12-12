@@ -1,6 +1,5 @@
-var app = angular.module('recApp', ["ui.router", "ui.grid", "ngAnimate", "ngAria", "ngMaterial", 'firebase']);
-
-app.config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', function($urlRouterProvider, $stateProvider, $mdThemingProvider) {
+angular.module('recApp', ["ui.router", "ui.grid", "ngAnimate", "ngAria", "ngMaterial", 'firebase'])
+.config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', function($urlRouterProvider, $stateProvider, $mdThemingProvider) {
 	$stateProvider
 		.state('home', {
 			url: '/home',

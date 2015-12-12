@@ -1,4 +1,5 @@
-app.controller('recItemsCtrl', function($scope){
+angular.module('recApp')
+.controller('recItemsCtrl', function($scope){
 
 
 });

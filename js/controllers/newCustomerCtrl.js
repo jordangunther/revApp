@@ -1,4 +1,5 @@
-app.controller('newCustomerCtrl', function($scope, newCustomerService){
+angular.module('recApp')
+.controller('newCustomerCtrl', function($scope, newCustomerService){
 	$scope.shippingShow = false;
 
 	$scope.shippingAddress = function() {

@@ -1,4 +1,5 @@
-app.controller('regiCtrl', function ($scope, $state, regiService){
+angular.module('recApp')
+.controller('regiCtrl', function ($scope, $state, regiService){
 	
 	var loginCallback = function(user){//Can I put this in the main ctrl?
     	console.log('loginCallback was run')

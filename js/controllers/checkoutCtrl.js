@@ -1,4 +1,5 @@
-app.controller('checkoutCtrl', function($scope, checkoutService, shopService, newCustomerService, customerService){
+angular.module('recApp')
+.controller('checkoutCtrl', function($scope, checkoutService, shopService, newCustomerService, customerService){
 	$scope.cartItems = shopService.cartItems;
 	$scope.cartTotal = shopService.cartTotal;
 	$scope.newCustomer = newCustomerService.customerinfo;

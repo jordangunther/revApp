@@ -1,4 +1,6 @@
-app.service('createProductService', function($q){
+angular.module('recApp')
+.service('createProductService', function($q){
+
 	var ref = new Firebase('https://myallapp.firebaseio.com/revApp/parts');
 	
 	this.addProduct = function(product, amount){

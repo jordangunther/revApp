@@ -1,4 +1,5 @@
-app.service('shopService', function($q){
+angular.module('recApp')
+.service('shopService', function($q){
 	var ref = new Firebase('https://myallapp.firebaseio.com/revApp/parts');
 	
 	this.getProducts = function(){

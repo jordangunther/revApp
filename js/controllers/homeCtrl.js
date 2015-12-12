@@ -1,4 +1,5 @@
-app.controller('homeCtrl', function($scope){
+angular.module('recApp')
+.controller('homeCtrl', function($scope){
 
 
 });
