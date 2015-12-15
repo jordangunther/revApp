@@ -2,7 +2,9 @@ angular.module('recApp')
 .service('summaryService', function($q){
 	var ref = new Firebase('https://myallapp.firebaseio.com/revApp/lineItems');
 	var refParts = new Firebase('https://myallapp.firebaseio.com/revApp/parts');
+	var refCustomers = new Firebase('https://myallapp.firebaseio.com/revApp/customers');
 	
+
 	this.getLineItems = function() {
 		var defer = $q.defer();
 		ref.on('value', function(res){
@@ -27,4 +29,16 @@ angular.module('recApp')
 		});
 		return defer.promise;
 	};
+	this.getCustomer = function() {
+		var defer = $q.defer();
+		refCustomers.on('value', function(res){
+			this.customerObjs = res.val();
+			var customers = [];
+			for (key in customerObjs){
+				customers.push(customerObjs[key]);
+			}
+			defer.resolve(customers);
+		});
+		return defer.promise;
+	}
 });

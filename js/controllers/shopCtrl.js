@@ -12,6 +12,7 @@ angular.module('recApp')
 		});
 	}
 
+
 	$scope.viewPrice = function(index){
 		var dup = false;
 		for (var i = 0; i < $scope.cartItems.length; i++){

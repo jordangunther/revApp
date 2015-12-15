@@ -30,7 +30,13 @@ angular.module('recApp')
     
     $scope.products;
     $scope.productObj = {name: 'Select Product'};
+    $scope.customers;
+    $scope.customerObj = {name: 'Select Customer'};
+    $scope.showProduct = false;
+    $scope.showCustomer = false;
 
+   
+   
    ($scope.getLineItems = function() {
         summaryService.getLineItems().then(function(res){
             $scope.lineItems = res;
@@ -41,9 +47,32 @@ angular.module('recApp')
     ($scope.getProducts = function() {
         summaryService.getProducts().then(function(res){
             $scope.products = res;
-            console.log($scope.products);
         });
     })();
+
+    ($scope.getCustomers = function() {
+        summaryService.getCustomer().then(function(res){
+            $scope.customers = res;
+        });
+    })();
+
+    $scope.showProducts = function(){
+        if ($scope.showProduct === false){
+            $scope.showProduct = true;
+            $scope.showCustomer = false;
+        } else {
+            $scope.showProduct = false;
+        }
+    }
+
+    $scope.showCustomers = function(){
+        if ($scope.showCustomer === false){
+            $scope.showCustomer = true;
+            $scope.showProduct = false;
+        } else {
+            $scope.showCustomer = false;
+        }
+    }
 
     $scope.totalMonthAmount = function() {
         var todaysDate = new Date();
@@ -136,7 +165,7 @@ angular.module('recApp')
 
 
     $scope.totalPartAmount = function(index) {
-        $scope.janPrice = 0;
+    $scope.janPrice = 0;
     $scope.febPrice = 0;
     $scope.marPrice = 0;
     $scope.aprPrice = 0;
@@ -161,7 +190,9 @@ angular.module('recApp')
     $scope.lastOctPrice = 0;
     $scope.lastNovPrice = 0;
     $scope.lastDecPrice = 0;
-        console.log($scope.products, index)
+
+    
+
         $scope.productObj = $scope.products[index];
         var todaysDate = new Date();
         var currentYear = todaysDate.getFullYear();
@@ -170,7 +201,6 @@ angular.module('recApp')
             var year = date.getFullYear();
             var month = date.getMonth();
             if (year === currentYear && $scope.lineItems[i].product == $scope.productObj.name){
-                console.log('year and product', currentYear, $scope.productObj)
                if (month === 0) {
                     $scope.janPrice = $scope.janPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 1) {
@@ -197,31 +227,32 @@ angular.module('recApp')
                     $scope.decPrice = $scope.decPrice + $scope.lineItems[i].extendedAmount;
                 }
 
-            } else if(year === currentYear - 1){
+            } else if(year === currentYear - 1 && $scope.lineItems[i].product == $scope.productObj.name){
+
                 if (month === 0) {
-                    $scope.lastJanTotal = $scope.lastJanTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastJanPrice = $scope.lastJanPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 1) {
-                    $scope.lastFebTotal = $scope.lastFebTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastFebPrice = $scope.lastFebPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 2) {
-                    $scope.lastMarTotal = $scope.lastMarTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastMarPrice = $scope.lastMarPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 3) {
-                    $scope.lastAprTotal = $scope.lastAprTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastAprPrice = $scope.lastAprPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 4) {
-                    $scope.lastMayTotal = $scope.lastMayTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastMayPrice = $scope.lastMayPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 5) {
-                    $scope.lastJunTotal = $scope.lastJunTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastJunPrice = $scope.lastJunPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 6) {
-                    $scope.lastJulTotal = $scope.lastJulTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastJulPrice = $scope.lastJulPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 7) {
-                    $scope.lastAugTotal = $scope.lastAugTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastAugPrice = $scope.lastAugPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 8) {
-                    $scope.lastSepTotal = $scope.lastSepTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastSepPrice = $scope.lastSepPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 9) {
-                    $scope.lastOctTotal = $scope.lastOctTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastOctPrice = $scope.lastOctPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 10) {
-                    $scope.lastNovTotal = $scope.lastNovTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastNovPrice = $scope.lastNovPrice + $scope.lineItems[i].extendedAmount;
                 } else if (month === 11) {
-                    $scope.lastDecTotal = $scope.lastDecTotal + $scope.lineItems[i].extendedAmount;
+                    $scope.lastDecPrice = $scope.lastDecPrice + $scope.lineItems[i].extendedAmount;
                 }
             }
         }
@@ -252,6 +283,123 @@ angular.module('recApp')
         })    
     }
 
+
+
+$scope.totalCustomerAmount = function(index) {
+    $scope.janCustomer = 0;
+    $scope.febCustomer = 0;
+    $scope.marCustomer = 0;
+    $scope.aprCustomer = 0;
+    $scope.mayCustomer = 0;
+    $scope.junCustomer = 0;
+    $scope.julCustomer = 0;
+    $scope.augCustomer = 0;
+    $scope.sepCustomer = 0;
+    $scope.octCustomer = 0;
+    $scope.novCustomer = 0;
+    $scope.decCustomer = 0;
+
+    $scope.lastJanCustomer = 0;
+    $scope.lastFebCustomer = 0;
+    $scope.lastMarCustomer = 0;
+    $scope.lastAprCustomer = 0;
+    $scope.lastMayCustomer = 0;
+    $scope.lastJunCustomer = 0;
+    $scope.lastJulCustomer = 0;
+    $scope.lastAugCustomer = 0;
+    $scope.lastSepCustomer = 0;
+    $scope.lastOctCustomer = 0;
+    $scope.lastNovCustomer = 0;
+    $scope.lastDecCustomer = 0;
+        $scope.customerObj = $scope.customers[index];
+        var todaysDate = new Date();
+        var currentYear = todaysDate.getFullYear();
+        for (var i = 0; i < $scope.lineItems.length; i++){
+            var date = new Date($scope.lineItems[i].orderEntryDate);
+            var year = date.getFullYear();
+            var month = date.getMonth();
+           if (year === currentYear && $scope.lineItems[i].name === $scope.customerObj.name){
+               if (month === 0) {
+                    $scope.janCustomer = $scope.janCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 1) {
+                    $scope.febCustomer = $scope.febCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 2) {
+                    $scope.marCustomer = $scope.marCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 3) {
+                    $scope.aprCustomer = $scope.aprCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 4) {
+                    $scope.mayCustomer = $scope.mayCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 5) {
+                    $scope.junCustomer = $scope.junCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 6) {
+                    $scope.julCustomer = $scope.julCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 7) {
+                    $scope.augCustomer = $scope.augCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 8) {
+                    $scope.sepCustomer = $scope.sepCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 9) {
+                    $scope.octCustomer = $scope.octCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 10) {
+                    $scope.novCustomer = $scope.novCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 11) {
+                    $scope.decCustomer = $scope.decCustomer + $scope.lineItems[i].extendedAmount;
+                }
+
+            } else if(year === currentYear - 1 && $scope.lineItems[i].name == $scope.customerObj.name){
+
+                if (month === 0) {
+                    $scope.lastJanCustomer = $scope.lastJanCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 1) {
+                    $scope.lastFebCustomer = $scope.lastFebCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 2) {
+                    $scope.lastMarCustomer = $scope.lastMarCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 3) {
+                    $scope.lastAprCustomer = $scope.lastAprCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 4) {
+                    $scope.lastMayCustomer = $scope.lastMayCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 5) {
+                    $scope.lastJunCustomer = $scope.lastJunCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 6) {
+                    $scope.lastJulCustomer = $scope.lastJulCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 7) {
+                    $scope.lastAugCustomer = $scope.lastAugCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 8) {
+                    $scope.lastSepCustomer = $scope.lastSepCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 9) {
+                    $scope.lastOctCustomer = $scope.lastOctCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 10) {
+                    $scope.lastNovCustomer = $scope.lastNovCustomer + $scope.lineItems[i].extendedAmount;
+                } else if (month === 11) {
+                    $scope.lastDecCustomer = $scope.lastDecCustomer + $scope.lineItems[i].extendedAmount;
+                }
+            }
+        }
+            
+        var chart = c3.generate({
+            bindto: '#chartCustomer',
+            data: {
+                columns: [
+                    ['Current Fiscal Month', $scope.janCustomer, $scope.febCustomer, $scope.marCustomer, $scope.aprCustomer, $scope.mayCustomer, $scope.junCustomer, $scope.julCustomer, $scope.augCustomer, $scope.sepCustomer, $scope.octCustomer, $scope.novCustomer, $scope.decCustomer],
+                    ['Previous Year', $scope.lastJanCustomer, $scope.lastFebCustomer, $scope.lastMarCustomer, $scope.lastAprCustomer, $scope.lastMayCustomer, $scope.lastJunCustomer, $scope.lastJulCustomer, $scope.lastAugCustomer, $scope.lastSepCustomer, $scope.lastOctCustomer, $scope.lastNovCustomer, $scope.lastDecCustomer],
+                ]      
+            },
+            axis: {
+                y: {
+                    label: {
+                        text: 'Amount',
+                        position: 'outer-middle'
+                    },
+                    tick: {
+                        format: d3.format("$,") // ADD
+                    }
+                },
+                x: {
+                    type: 'category',
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                }    
+            }
+        })    
+    }
 
 
 

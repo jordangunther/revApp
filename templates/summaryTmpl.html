@@ -12,14 +12,15 @@
 </md-button>
 
 <div ng-show='false' ui-grid="{ data: myData }" class="myGrid"></div>
-
+<br>
 Fiscal Month Revenue Analyses:
 <div id="chartTotal"></div>
 
  Fiscal Month Product Analyses:
- <md-button ng-show='products'class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive" ng-class="{active:myDropdownIsActive}">
+ <br>
+ <md-button ng-show='products'class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive; showProducts()" ng-class="{active:myDropdownIsActive}">
   {{productObj.name}}
-  <ul class="dropdown-menu md-whiteframe-z1" style="z-index: 10">
+  <ul ng-show='showProduct' class="dropdown-menu md-whiteframe-z1" style="z-index: 10">
     <li ng-repeat = 'product in products'>
       <md-button ng-model='selectedProduct' ng-click='totalPartAmount($index)'>
         {{product.name}}
@@ -28,6 +29,20 @@ Fiscal Month Revenue Analyses:
   </ul>
 </md-button>
 <div id="chartProduct"></div>
+<br>
+Fiscal Month Customer Analysis:
+<br>
+<md-button ng-show='customers'class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive; showCustomers()" ng-class="{active:myDropdownIsActive}">
+  {{customerObj.name}}
+  <ul ng-show='showCustomer' class="dropdown-menu md-whiteframe-z1" style="z-index: 10">
+    <li ng-repeat = 'customer in customers'>
+      <md-button ng-model='selectedProduct' ng-click='totalCustomerAmount($index)'>
+        {{customer.name}}
+      </md-button>
+    </li>
+  </ul>
+</md-button>
+<div id="chartCustomer"></div>
 
 <div ng-show='false' class="tabsdemoDynamicHeight">
   <md-content>
