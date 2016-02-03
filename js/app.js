@@ -1,11 +1,6 @@
-angular.module('recApp', ["ui.router", "ui.grid", "ngAnimate", "ngAria", "ngMaterial", 'firebase'])
+angular.module('recApp', ["ui.router", "ui.grid", "ngTouch", "ngAnimate", "ngAria", "ngMaterial", 'firebase'])
 .config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', function($urlRouterProvider, $stateProvider, $mdThemingProvider) {
 	$stateProvider
-		.state('home', {
-			url: '/home',
-			templateUrl: 'templates/homeTmpl.html',
-			controller: 'homeCtrl'
-		})
 		.state('summary', {
 			url: '/summary/:userId',
 			templateUrl: 'templates/summaryTmpl.html',
@@ -21,20 +16,15 @@ angular.module('recApp', ["ui.router", "ui.grid", "ngAnimate", "ngAria", "ngMate
 			templateUrl: 'templates/regiTmpl.html',
 			controller: 'regiCtrl'
 		})
-		.state('recItems', {
-			url: '/recItems',
-			templateUrl: 'templates/recItemsTmpl.html',
-			controller: 'recItemsCtrl'
+		.state('lineItems', {
+			url: '/lineItems',
+			templateUrl: 'templates/lineItemsTmpl.html',
+			controller: 'lineItemsCtrl'
 		})
 		.state('createProduct', {
 			url: '/createProduct',
 			templateUrl: 'templates/createProductTmpl.html',
 			controller: 'createProductCtrl'
-		})
-		.state('orderEntry', {
-			url: '/orderEntry',
-			templateUrl: 'templates/orderEntryTmpl.html',
-			controller: 'orderEntryCtrl'
 		})
 		.state('shop', {
 			url: '/shop',

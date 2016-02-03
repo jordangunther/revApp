@@ -11,9 +11,6 @@
   <body ng-controller='myCtrl'>
   	<md-toolbar>
         <div class="md-toolbar-tools">
-          <md-button aria-label="home" ui-sref='home'>
-            home
-          </md-button>
           <md-button aria-label="login" ui-sref='login'>
             login
           </md-button>
@@ -24,11 +21,12 @@
             shop
           </md-button>
           <span flex=""></span>
-          <md-button class="md-raised" aria-label="Learn More">
+<!--      <md-button class="md-raised" aria-label="Learn More">
             Learn More
           </md-button>
           <md-button class="md-fab md-mini" aria-label="Favorite">
-          </md-button>
+          </md-button> 
+-->
         </div>  
       </md-toolbar>
 
@@ -40,6 +38,12 @@
   	<script src="js/bower_components/angular-material/angular-material.js"></script>
   	<script src='js/bower_components/angular-ui-router/release/angular-ui-router.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.0.7/ui-grid.min.js'></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <!-- Grunt -->
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
     <!-- D3 C3-->
     <script src="js/bower_components/c3/c3.min.js"></script>
     <script src="js/bower_components/d3/d3.min.js"></script>
@@ -52,13 +56,11 @@
     <!-- App Init -->
   	<script src="js/app.js"></script>
     <!-- Controllers -->
-    <script src="js/controllers/homeCtrl.js"></script>
     <script src="js/controllers/loginCtrl.js"></script>
     <script src="js/controllers/myCtrl.js"></script>
-    <script src="js/controllers/recItemsCtrl.js"></script>
+    <script src="js/controllers/lineItemsCtrl.js"></script>
     <script src="js/controllers/regiCtrl.js"></script>
     <script src="js/controllers/summaryCtrl.js"></script>
-    <script src="js/controllers/orderEntryCtrl.js"></script>
     <script src="js/controllers/createProductCtrl.js"></script>
     <script src="js/controllers/customerCtrl.js"></script>
     <script src="js/controllers/newCustomerCtrl.js"></script>
@@ -66,13 +68,11 @@
     <script src="js/controllers/checkoutCtrl.js"></script>
 
     <!-- Services -->
-    <script src="js/services/homeService.js"></script>
     <script src="js/services/loginService.js"></script>
     <script src="js/services/myService.js"></script>
-    <script src="js/services/recItemsService.js"></script>
+    <script src="js/services/lineItemsService.js"></script>
     <script src="js/services/regiService.js"></script>
     <script src="js/services/firebaseService.js"></script>
-    <script src="js/services/orderEntryService.js"></script>
     <script src="js/services/createProductService.js"></script>
     <script src="js/services/customerService.js"></script>
     <script src="js/services/newCustomerService.js"></script>

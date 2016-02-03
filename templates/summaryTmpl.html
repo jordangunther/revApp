@@ -1,17 +1,8 @@
 
-<md-button ui-sref='recItems' ng-click='mySelection(invoiced)'class='md-raised md-accent'>
-	Invoiced
+<md-button ui-sref='lineItems' ng-click='mySelection(invoiced)'class='md-raised md-accent'>
+	View Line Items
 </md-button>
 
-<md-button ui-sref='recItems' ng-click='mySelection(shipped)' class='md-raised md-primary'>
-	Shipped
-</md-button>
-
-<md-button ui-sref='recItems' ng-click='mySelection(shippedNotInvoiced)' class='md-raised md-warn'>
-	Shipped not invoiced
-</md-button>
-
-<div ng-show='false' ui-grid="{ data: myData }" class="myGrid"></div>
 <br>
 Fiscal Month Revenue Analyses:
 <div id="chartTotal"></div>
@@ -44,32 +35,7 @@ Fiscal Month Customer Analysis:
 </md-button>
 <div id="chartCustomer"></div>
 
-<div ng-show='false' class="tabsdemoDynamicHeight">
-  <md-content>
-    <md-tabs class='md-accent' md-dynamic-height="" md-border-bottom="">
-      <md-tab label="Revenue">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">
-          	Revenue
-          </h1>
-          testing
 
-          
-        </md-content>
-      </md-tab>
-      <md-tab label="two">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab Two</h1>
-        </md-content>
-      </md-tab>
-      <md-tab label="three">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab Three</h1>
-        </md-content>
-      </md-tab>
-    </md-tabs>
-  </md-content>
-</div>
 
 
 
