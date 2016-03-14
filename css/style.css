@@ -1,0 +1,93 @@
+.padding {
+	padding: 20px;
+}
+.md-button.dropdown {
+  overflow: visible; /*reset*/
+}
+
+.dropdown .dropdown-menu {
+  max-width: 0;
+  position: absolute;
+  left: 40px;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  background-color: #fff;
+  list-style: none;
+  transition: min-width 0.2s ease-in-out, left 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.dropdown .dropdown-menu .md-button {
+  min-width: 100%;
+  border-radius: 0;
+  margin: 0;
+  padding: 6px 16px;
+}
+
+.dropdown.active .dropdown-menu {
+  max-width: 300px; /* set a maxwidth bigger than the widest element */
+  left: 0;
+  opacity: 1;
+}
+
+.inputdemoIcons .inputIconDemo {
+  min-height: 48px; }
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.email {
+  color: green; }
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.name {
+  color: dodgerblue; }
+.inputdemoIcons md-input-container.md-input-invalid > md-icon.email, .inputdemoIcons md-input-container.md-input-invalid > md-icon.name {
+  color: red; }
+.float {
+  float: left;
+}
+/* ui-grid */
+.myGrid {
+  max-width: 100%; 
+  width: 1000px;
+  height: 250px;
+}
+
+/* angular tabs */
+
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; 
+}
+.tabsdemoDynamicHeight md-content md-tabs {
+  background: #f6f6f6;
+  border: 1px solid #e1e1e1; 
+}
+.tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+  background: white; 
+}
+.tabsdemoDynamicHeight md-content h1:first-child {
+  margin-top: 0;
+}
+
+/* barChart dir */
+.chart {
+    background: #eee;
+    padding: 3px;
+}
+
+.chart div {
+  width: 0;
+  transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 5px;
+  color: white;
+  box-shadow: 2px 2px 2px #666;
+}
+
+
+

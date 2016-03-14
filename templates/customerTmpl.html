@@ -1,0 +1,19 @@
+
+
+<md-button class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive; getCustomers()" ng-class="{active:myDropdownIsActive}">
+  Customer
+  <ul class="dropdown-menu md-whiteframe-z1" style="z-index: 10">
+    <a ui-sref='checkout' ng-click='mySelection(checkout)'>
+    	<li ng-repeat = 'customer in customers'>
+      		<md-button ng-model='selectedcustomer' ng-click='saveCustomer($index)'>
+      			{{customer.name}}
+      		</md-button>
+    	</li>
+  	</a>
+  </ul>
+</md-button>
+<a ui-sref='newCustomer' ng-click='mySelection(newCustomer)'>
+	<md-button class='md-raised md-primary'>
+	New Customer
+	</md-button>
+</a>

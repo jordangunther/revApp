@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app='recApp'>
+  <head>
+    <link rel="stylesheet" type="text/css" href="js/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.0.7/ui-grid.css">
+  	<link rel="stylesheet" type="text/css" href="js/bower_components/angular-material/angular-material.css">
+    <link href="js/bower_components/c3/c3.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  	<title>RevApp</title>
+  </head>
+  <body ng-controller='myCtrl'>
+  	<md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button aria-label="login" ui-sref='login'>
+            login
+          </md-button>
+          <md-button aria-label="createProduct" ui-sref='createProduct'>
+            create product
+          </md-button>
+          <md-button aria-label="shop" ui-sref='shop'>
+            shop
+          </md-button>
+          <span flex=""></span>
+<!--      <md-button class="md-raised" aria-label="Learn More">
+            Learn More
+          </md-button>
+          <md-button class="md-fab md-mini" aria-label="Favorite">
+          </md-button> 
+-->
+        </div>  
+      </md-toolbar>
+
+  	<div ui-view></div>
+    <!-- Angular -->
+  	<script src="js/bower_components/angular/angular.js"></script>
+  	<script src="js/bower_components/angular-animate/angular-animate.js"></script>
+  	<script src="js/bower_components/angular-aria/angular-aria.js"></script>
+  	<script src="js/bower_components/angular-material/angular-material.js"></script>
+  	<script src='js/bower_components/angular-ui-router/release/angular-ui-router.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.0.7/ui-grid.min.js'></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <!-- Grunt -->
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <!-- D3 C3-->
+    <script src="js/bower_components/c3/c3.min.js"></script>
+    <script src="js/bower_components/d3/d3.min.js"></script>
+    <!-- Firebase -->
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="js/bower_components/firebase/firebase.js"></script>
+    <script src="js/bower_components/angularfire/dist/angularfire.js"></script>
+    <!-- JSON -->
+    <script src="js/bower_components/json/json2.js"></script>
+    <!-- App Init -->
+  	<script src="js/app.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/controllers/myCtrl.js"></script>
+    <script src="js/controllers/lineItemsCtrl.js"></script>
+    <script src="js/controllers/regiCtrl.js"></script>
+    <script src="js/controllers/summaryCtrl.js"></script>
+    <script src="js/controllers/createProductCtrl.js"></script>
+    <script src="js/controllers/customerCtrl.js"></script>
+    <script src="js/controllers/newCustomerCtrl.js"></script>
+    <script src="js/controllers/shopCtrl.js"></script>
+    <script src="js/controllers/checkoutCtrl.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/loginService.js"></script>
+    <script src="js/services/myService.js"></script>
+    <script src="js/services/lineItemsService.js"></script>
+    <script src="js/services/regiService.js"></script>
+    <script src="js/services/firebaseService.js"></script>
+    <script src="js/services/createProductService.js"></script>
+    <script src="js/services/customerService.js"></script>
+    <script src="js/services/newCustomerService.js"></script>
+    <script src="js/services/shopService.js"></script>
+    <script src="js/services/checkoutService.js"></script>
+    <script src="js/services/summaryService.js"></script>
+    <!-- Directives -->  
+  </body>
+</html>

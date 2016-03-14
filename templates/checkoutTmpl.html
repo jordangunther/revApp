@@ -1,0 +1,39 @@
+<div>
+	<div style="padding: 40px; width: 250px;" class='float'>
+		<md-content>
+			<p>
+				Order Entry Date
+			</p>
+    		<md-datepicker ng-model="orderEntryDate" md-placeholder="Enter date"></md-datepicker>    
+  		</md-content>
+	</div>
+
+	<div class="carddemoBasicUsage" class='float'>
+  		<md-content class="md-padding" layout="row" layout-wrap="" layout-align="center start">
+    		<div flex="50" layout="column">
+      			<md-card>
+      				<md-card-title-text>
+        				<span class="md-headline">Checkout</span>
+        				<br>
+        				<span class="md-subhead" ng-repeat='item in cartItems'>
+							{{item.name}} - {{item.amount | currency : symbol : fractionSize}} - Qty: {{item.qty}} - Extended Amount: {{item.extendedAmount | currency : symbol : fractionSize}}</span>
+      				</md-card-title-text>
+      				<md-card-title-media>
+        				<div class="md-media-lg card-media"></div>
+      				</md-card-title-media>
+    			</md-card-title>
+   				<md-card-actions layout="row" layout-align="end center">
+      				<h3>
+      					Total: {{cartTotal | currency : symbol : fractionSize}}
+      				</h3>
+    			</md-card-actions>
+    			<md-card-actions layout="row" layout-align="end center">
+  					<md-button class='md-raised md-primary' ui-sref='shop' ng-click='addLineItems()'>
+						Place Order
+					</md-button>
+  				</md-card-actions>
+ 			</md-card>
+  		</md-content>
+  	</div>
+</div>
+
